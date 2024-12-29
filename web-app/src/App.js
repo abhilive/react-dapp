@@ -29,7 +29,7 @@ function App() {
   }
   return (
     <div>
-    {/* <Image size='large' src="./IITP-Long-Logo.png"  style={style.imgTop} centered /> */}
+    <Image size='large' src="./IITP-Long-Logo.png"  style={style.imgTop} centered />
     <Header as='h3' textAlign='center' style={style.h3} content='Blockchain for Food Traceability and Safety' />
     <Container>
       <Menu secondary>
