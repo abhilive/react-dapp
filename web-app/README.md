@@ -1,4 +1,4 @@
-# Getting Started with React Decentralized Appllication
+# Getting Started with React Decentralized Application
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 CSS Uses React Semantic UI (https://react.semantic-ui.com/).
