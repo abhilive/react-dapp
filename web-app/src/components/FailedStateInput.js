@@ -7,6 +7,6 @@ export default function FailedStateInput(props) {
   if (contributedByCurrentAccount) {
     return <Button type='submit' negative>Withdraw funds</Button>
   } else {
-    return <Label>The campaign has failed</Label>
+    return <Label>The contract has failed</Label>
   }
 }

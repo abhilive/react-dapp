@@ -7,6 +7,6 @@ export default function SuccededStateInput(props) {
   if (isBeneficiary) {
     return <Button type='submit' negative>Collect funds</Button>
   } else {
-    return <Label>The campaign has finished successfully</Label>
+    return <Label>The contract has finished successfully</Label>
   }
 }

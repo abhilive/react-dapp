@@ -5,7 +5,6 @@ import { getWeb3, getContract } from '../ethereum/utils'
 export default function ContributeInput(props) {
 
   const {
-    contractExpired,
     contractAddress,
     currentAccount
   } = props;
@@ -21,20 +20,11 @@ export default function ContributeInput(props) {
   const [maximumTempInCEL, setMaximumTempInCEL] = useState('')
 
   async function onUpdateContract(event) {
-    console.log("contractInfo: ")
-    console.log(productDescription)
-    console.log(weightInPound)
-    console.log(paymentAmountInETH)
-    console.log(minimumTempInCEL)
-    console.log(maximumTempInCEL)
 
     const amount = web3.utils.toWei(
       paymentAmountInETH,
       'ether'
     )
-    console.log("amount: "+ amount)
-    console.log("currentAccount: "+ currentAccount);
-    console.log("contractAddress: "+ contractAddress);
 
     // Create contract instance
     const contract = getContract(web3, contractAddress)
@@ -70,25 +60,12 @@ export default function ContributeInput(props) {
     } catch (error) {
         console.error('Error updating contract data:', error);
     }
-
-    // const nonce = await web3.eth.getTransactionCount(currentAccount, 'pending');
-    // console.log("Correct nonce:", nonce);
   }
-
-  // const contract = getContract(web3, contractAddress)
-  // contract.on('Transfer', async (from, to, amount, data) => {
-  //   console.log('Transfer event emitted. {from, to, amount, data}');
-  // });
 
   async function onValidateContract(event) {
     // Create contract instance
     const contract = getContract(web3, contractAddress)
-    const minTemp = await contract.methods.minimumTempInCEL().call();
-    const maxTemp = await contract.methods.maximumTempInCEL().call();
-    console.log("minTemp: "+ minTemp);
-    console.log("maxTemp: "+ maxTemp);
     const tx = contract.methods.validateTemperature(importedTemperature);
-    console.log("importedTemperature: "+ importedTemperature);
     try {
       const gasEstimate = await web3.eth.estimateGas({
         from: currentAccount,
@@ -161,6 +138,7 @@ export default function ContributeInput(props) {
         value={maximumTempInCEL}
         onChange={e => setMaximumTempInCEL(e.target.value)}
       />
+      {/* Future Work */}
       {/* <Form.Input
         label='Required average temperature in Fahrenheit'
         type='text'
@@ -195,7 +173,7 @@ export default function ContributeInput(props) {
         actionPosition='left'
         label='°C'
         labelPosition='right'
-        placeholder='0-25°C'
+        placeholder='like 0-25°C'
         onChange={(e) => setImportedTemperature(e.target.value)}
       />
       <Divider />

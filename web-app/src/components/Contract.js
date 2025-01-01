@@ -181,14 +181,14 @@ export default function Contract() {
     <Table.Footer fullWidth>
       <Table.Row>
         <Table.HeaderCell colSpan="2">
-          {campaignInteractionSection(contractInfo, address, currentAccount)}
+          {contractInteractionSection(contractInfo, address, currentAccount)}
         </Table.HeaderCell>
       </Table.Row>
     </Table.Footer>
   </Table>
 }
 
-function campaignInteractionSection(contractInfo, address, currentAccount) {
+function contractInteractionSection(contractInfo, address, currentAccount) {
   console.log("contractInfo.state:"+ contractInfo.state);
   if (contractInfo.state.toString() === ONGOING_STATE) {
     return <ContributeInput
