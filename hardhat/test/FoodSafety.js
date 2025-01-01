@@ -29,7 +29,7 @@ describe("FoodSafety", function() {
     }
 
     describe("Deployment", function() {
-        it("Should set the rigt campaign name", async function() {
+        it("Should set the rigt contract name", async function() {
             const { foodsafety, contractName } = await loadFixture(deployThirtyMinutesLockFixture);
             expect(await foodsafety.name()).to.equal(contractName);
         });

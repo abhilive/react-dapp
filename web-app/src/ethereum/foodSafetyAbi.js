@@ -46,31 +46,6 @@ const foodSafetyAbi = [
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "internalType": "address",
-        "name": "addr",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "totalCollected",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "bool",
-        "name": "succeeded",
-        "type": "bool"
-      }
-    ],
-    "name": "CampaignFinished",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
         "indexed": true,
         "internalType": "address",
         "name": "previousOwner",
@@ -372,13 +347,6 @@ const foodSafetyAbi = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "withdraw",
-    "outputs": [],
-    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
